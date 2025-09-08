@@ -6,7 +6,7 @@ import { TypographyH2 } from '../../components/Typography/TypographyH2';
 import { useFetchProducts } from '../../hooks/useFetchProducts';
 import { useParams } from 'react-router-dom';
 import { ProductType } from '../../types/ProductType';
-import { CarrouselProduct } from '../../components/CarrouselProduct.tsx';
+import { CarrouselProduct } from '../../components/CarrouselProduct';
 
 export const ProductDetailsPage = () => {
   const { id } = useParams();
