@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+# 🛍️ Shop.co
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Shop.co** é uma plataforma moderna de e-commerce desenvolvida com **React** e **TypeScript**, projetada para oferecer uma experiência fluida, responsiva e escalável.  
+O projeto está atualmente hospedado na **Render**, com integração completa entre front-end e API externa.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Demonstração
 
-### `npm start`
+🔗 **Deploy:** [https://shopco.onrender.com](https://shop-co-react.onrender.com)  
+🔗 **Repositório:** [https://github.com/joaovitorsamora/shop.co](https://github.com/joaovitorsamora/shop.co-react)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🧠 Visão Geral
 
-### `npm test`
+O **Shop.co** simula um ambiente real de loja virtual, oferecendo uma interface dinâmica com listagem de produtos, carrosséis, avaliações, seções de estilo e depoimentos.  
+Cada parte da aplicação foi cuidadosamente estruturada para garantir modularidade, performance e reutilização de componentes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Tecnologias Utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Categoria | Tecnologias |
+|------------|-------------|
+| **Frontend** | React, TypeScript, Tailwind CSS, ShadCN UI |
+| **Gerenciamento de Dados** | SWR (para cache e revalidação de dados) |
+| **Design e UI** | Lucide React, CSS Utility-First (Tailwind) |
+| **Testes** | Jest, Testing Library |
+| **Deploy** | Render |
+| **Outros** | Vite, ESLint, Prettier |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧩 Principais Funcionalidades
 
-### `npm run eject`
+- 🛒 **Listagem dinâmica de produtos** obtidos via API.  
+- 💬 **Seção de depoimentos** de clientes com carrossel interativo.  
+- 🧭 **Sistema de navegação responsiva** com menu adaptativo e barra de pesquisa.  
+- 🌈 **Design moderno e responsivo**, adaptado para qualquer resolução.  
+- ⚡ **Carregamento otimizado** via Suspense e Skeletons.  
+- 🧱 **Componentização escalável**, dividida em seções modulares (Header, Hero, ProductSection, TestimonialSection, etc).  
+- 🧪 **Testes unitários** garantindo estabilidade de componentes-chave.  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1️⃣ Clone o repositório:
+```bash
+git clone https://github.com/joaovitorsamora/shop.co-react
+````
+### 2️⃣ Clone o repositório:
+```bash
+cd shop.co-react
+```
+### 3️⃣ Clone o repositório:
+```bash
+npm install
+```
