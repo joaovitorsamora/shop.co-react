@@ -1,17 +1,17 @@
-import useSWR from 'swr'
-import { ProductType } from '../types/ProductType'
-import { TestimonialTypes } from '../types/TestimonialTypes'
+import useSWR from 'swr';
+import { ProductType } from '../types/ProductType';
+import { TestimonialTypes } from '../types/TestimonialTypes';
 
-const BASE_URL = 'https://shop-co-server-three.vercel.app'
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const fetcher = async () => {
   const [productsRes, testimonialsRes] = await Promise.all([
     fetch(`${BASE_URL}/products`),
-    fetch(`${BASE_URL}/testimonials`)
-  ])
+    fetch(`${BASE_URL}/testimonials`),
+  ]);
 
-  const productsData = await productsRes.json()
-  const testimonialsData = await testimonialsRes.json()
+  const productsData = await productsRes.json();
+  const testimonialsData = await testimonialsRes.json();
 
   const formattedProducts: ProductType[] = productsData.map((product: any) => ({
     ...product,
@@ -19,28 +19,28 @@ const fetcher = async () => {
       ? `${BASE_URL}${product.image[0]}`
       : `${BASE_URL}${product.image}`,
     starsReview: `${BASE_URL}${product.starsReviewImage}`,
-  }))
+  }));
 
   const formattedTestimonials: TestimonialTypes[] = testimonialsData.map((testimonial: any) => ({
     ...testimonial,
     verificationImage: `${BASE_URL}${testimonial.verificationImage}`,
     starsReview: `${BASE_URL}${testimonial.starsReviewImage}`,
-  }))
+  }));
 
   return {
     products: formattedProducts,
     testimonials: formattedTestimonials,
-  }
-}
+  };
+};
 
 export const useFetchProducts = () => {
   const { data, error } = useSWR('fetch-products-and-testimonials', fetcher, {
     suspense: true,
-  })
+  });
 
   return {
     products: data?.products || [],
     testimonials: data?.testimonials || [],
     error,
-  }
-}
+  };
+};
