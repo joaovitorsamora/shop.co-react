@@ -6,12 +6,16 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ products }) => {
+  const productDetailPage = process.env.REACT_APP_PRODUCT_DETAIL_PAGE;
+
   return (
-    <Link to={`/product-details-page/${products.id}`}>
+    <Link to={`/${productDetailPage}/${products.id}`}>
       <li className="flex gap-3 snap-center min-w-[295px]">
         <article className="m-auto" key={products.id}>
           <img className="w-[295px] h-[297px]" src={products.image} alt={products.title} />
-          <h4 className="text-base font-bold pt-2">{products.title}</h4>
+          <h4 className="text-base font-bold pt-2" data-testid="mock-product">
+            {products.title}
+          </h4>
           <div
             className="flex items-center gap-3 py-1 px-0"
             role="img"
