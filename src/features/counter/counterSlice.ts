@@ -6,7 +6,7 @@ export interface CartItem {
   name: string;
   price: number;
   quantity: number;
-  image?: string;
+  image: string;
 }
 
 interface CartState {
@@ -33,8 +33,8 @@ export const counterSlice = createSlice({
       state.total = state.items.reduce((acc, i) => acc + i.price * i.quantity, 0);
     },
 
-    removerProduto: (state, action: PayloadAction<CartItem>) => {
-      state.items.filter(t => t.id !== action.payload.id);
+    removerProduto: (state, action: PayloadAction<number>) => {
+      state.items = state.items.filter(t => t.id !== action.payload);
       state.total = state.items.reduce((acc, i) => acc + i.price * i.quantity, 0);
     },
 
