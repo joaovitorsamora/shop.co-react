@@ -8,7 +8,7 @@ export const Cart = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col h-full p-4 text-white">
+    <div className="flex flex-col h-full p-4 text-white [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
       <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">🛒 Meu Carrinho</h2>
 
       {items.length === 0 ? (

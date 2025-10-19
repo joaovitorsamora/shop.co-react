@@ -20,9 +20,8 @@ export const SidePanel = () => {
         </button>
         <Cart />
       </div>
-
       <button
-        className="fixed top-4 right-4 z-30 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-900 transition"
+        className="flex items-center text-black p-3 transition"
         onClick={() => setIsOpen(true)}
       >
         <ShoppingBag />

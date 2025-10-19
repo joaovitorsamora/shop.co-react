@@ -11,7 +11,7 @@ export const DefaultPage = ({
   className?: string;
 }) => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Header
         logoText="SHOP.CO"
         renderIcon={() => <Menu />}
