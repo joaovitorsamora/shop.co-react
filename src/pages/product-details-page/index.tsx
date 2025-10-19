@@ -10,6 +10,11 @@ import { useFetchProducts } from '../../hooks/useFetchProducts';
 import { ProductType } from '../../types/ProductType';
 import { Plus, Minus } from 'lucide-react';
 import { Button } from '../../components/ui/button';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../app/store';
+import { adicionarProduto } from '../../features/counter/counterSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../app/store';
 
 export const ProductDetailsPage = () => {
   const { id } = useParams();
@@ -23,7 +28,11 @@ export const ProductDetailsPage = () => {
 
   const productsApiURL = process.env.REACT_APP_PRODUCTS;
 
+  const dispatch = useDispatch<AppDispatch>();
+  const cartItems = useSelector((state: RootState) => state.counter.items);
+
   useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
     const fetchProduct = async () => {
       try {
         const response = await fetch(`${productsApiURL}/${id}`);
@@ -34,7 +43,7 @@ export const ProductDetailsPage = () => {
       }
     };
     fetchProduct();
-  }, [id]);
+  }, [id, cartItems]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,6 +57,20 @@ export const ProductDetailsPage = () => {
 
   const imageURL = `${productsApiURL}/${id}/image`;
   const starsReviewImage = `${productsApiURL}/${id}/starsReviewImage`;
+
+  const handleAddToCart = () => {
+    if (productData) {
+      dispatch(
+        adicionarProduto({
+          id: Number(productData.id),
+          name: productData.title,
+          price: Number(productData.price),
+          quantity,
+          image: productData.image,
+        })
+      );
+    }
+  };
 
   return (
     <DefaultPage>
@@ -115,7 +138,10 @@ export const ProductDetailsPage = () => {
                 <Plus />
               </Button>
             </div>
-            <Button className="bg-black text-white px-6 py-5 rounded-full font-semibold max-w-[400px]">
+            <Button
+              className="bg-black text-white px-6 py-5 rounded-full font-semibold max-w-[400px]"
+              onClick={handleAddToCart}
+            >
               Add to Cart
             </Button>
           </section>
