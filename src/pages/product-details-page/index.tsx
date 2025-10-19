@@ -62,11 +62,11 @@ export const ProductDetailsPage = () => {
     if (productData) {
       dispatch(
         adicionarProduto({
-          id: Number(productData.id),
+          id: productData.id,
           name: productData.title,
           price: Number(productData.price),
           quantity,
-          image: productData.image,
+          image: imageURL,
         })
       );
     }
