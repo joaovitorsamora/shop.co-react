@@ -28,10 +28,16 @@ export const Header: React.FC<HeaderProps> = ({
       <HeaderTopPromo textPromo={textPromo} textSignUp={textSignUp} />
       <section className="flex justify-between items-center py-2.5 px-4">
         <HeaderMenu logoText={logoText} renderIcon={renderIcon} menuLinks={menuLinks} />
-        <HeaderSearch onChange={onChange} placeholder={placeholder} />
-        <Search className="flex md:hidden" />
-        <User className="relative left-[96px]" />
-        <SidePanel />
+
+        <div className="flex-1 mx-4">
+          <HeaderSearch onChange={onChange} placeholder={placeholder} />
+        </div>
+
+        <div className="flex items-center gap-4">
+          <Search className="md:hidden" />
+          <User className="w-6 h-6 text-black cursor-pointer" />
+          <SidePanel />
+        </div>
       </section>
     </header>
   );
