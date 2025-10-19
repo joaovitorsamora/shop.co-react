@@ -21,11 +21,6 @@ export const DefaultPage = ({
           { text: 'New Arrivals', href: '#' },
           { text: 'Brands', href: '#' },
         ]}
-        icons={[
-          { icon: <Search className="flex md:hidden" />, href: '#' },
-          { icon: <ShoppingBag />, href: '#' },
-          { icon: <User />, href: '#' },
-        ]}
         placeholder="Search for products"
         textPromo="Sign up and get 20% off to your first order."
         textSignUp="Sign Up Now"
