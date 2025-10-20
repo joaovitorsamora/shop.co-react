@@ -1,7 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import { CarrouselProduct } from '..';
-import { ProductCard } from '../../shared/ProductCard';
-import { mockProducts, mockProductsFromCarrousel } from '../../../../__mocks__/ProductCardMock';
+import { mockProductsFromCarrousel } from '../../../../__mocks__/ProductCardMock';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 
