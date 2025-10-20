@@ -3,7 +3,6 @@ import { CarrouselTestimonial } from '..';
 import { mockTestimonialsCardFromCarrousel } from '../../../../__mocks__/TestimonialsCardMock';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
-import { TestimonialsCard } from '../../shared/TestimonialsCard';
 
 jest.mock('../../ui/carousel', () => ({
   __esModule: true,
