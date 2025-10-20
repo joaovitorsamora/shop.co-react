@@ -1,8 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { FooterSection } from '../FooterSection';
-import { TypographyH2 } from '../Typography/TypographyH2';
-import { TypographyH3 } from '../Typography/TypographyH3';
-import { TypographyP } from '../Typography/TypographyP';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 
