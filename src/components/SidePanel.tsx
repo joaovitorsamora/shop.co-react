@@ -1,6 +1,6 @@
 import { ShoppingBag, PanelTopClose } from 'lucide-react';
 import { useState } from 'react';
-import { Cart } from './Cart';
+import { CartSidePanel } from './CartSidePanel';
 
 export const SidePanel = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,12 +18,9 @@ export const SidePanel = () => {
         >
           <PanelTopClose />
         </button>
-        <Cart />
+        <CartSidePanel />
       </div>
-      <button
-        className="flex items-center text-black p-3 transition"
-        onClick={() => setIsOpen(true)}
-      >
+      <button className="flex items-center transition" onClick={() => setIsOpen(true)}>
         <ShoppingBag />
       </button>
     </>
