@@ -7,7 +7,6 @@ import { CarrouselTestimonial } from './components/CarrouselTestimonial';
 
 function App() {
   const { products, testimonials } = useFetchProducts();
-  console.log(products[0]);
   const filteredProducts = products.filter(
     (product: ProductType | ProductType) => product.review > 4.0
   );
