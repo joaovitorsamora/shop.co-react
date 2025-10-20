@@ -3,6 +3,7 @@ import { HeaderMenu } from '../HeaderMenu';
 import { HeaderSearch } from '../HeaderSearch';
 import { SidePanel } from '../SidePanel';
 import { Search, User } from 'lucide-react';
+import { useState } from 'react';
 
 interface HeaderProps {
   logoText: string;
@@ -27,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({
     <header>
       <HeaderTopPromo textPromo={textPromo} textSignUp={textSignUp} />
       <section className="flex justify-between items-center py-2.5 px-4">
-        <HeaderMenu logoText={logoText} renderIcon={renderIcon} menuLinks={menuLinks} />
+        <HeaderMenu logoText={logoText} menuLinks={menuLinks} />
 
         <div className="flex-1 mx-4">
           <HeaderSearch onChange={onChange} placeholder={placeholder} />
