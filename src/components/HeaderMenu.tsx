@@ -37,7 +37,7 @@ export const HeaderMenu: React.FC<HeaderMenuProps> = ({ logoText, menuLinks = []
       <nav className="hidden lg:flex sm:hidden">
         <ul className="flex gap-4">
           {menuLinks?.map((link, index) => (
-            <li key={link.href || index}>
+            <li key={index}>
               <a className="no-underline text-black" href={link.href}>
                 {link.text}
               </a>
