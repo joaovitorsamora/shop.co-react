@@ -1,7 +1,7 @@
 export type TestimonialTypes = {
-  id: number  
+  id: number;
   name: string;
   verificationImage: string;
   quote: string;
-  starsReview: string;
+  starsReviewImage: string;
 };
