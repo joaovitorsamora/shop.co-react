@@ -18,13 +18,13 @@ const fetcher = async () => {
     image: Array.isArray(product.image)
       ? `${BASE_URL}${product.image[0]}`
       : `${BASE_URL}${product.image}`,
-    starsReview: `${BASE_URL}${product.starsReviewImage}`,
+    starsReviewImage: `${BASE_URL}${product.starsReviewImage}`,
   }));
 
   const formattedTestimonials: TestimonialTypes[] = testimonialsData.map((testimonial: any) => ({
     ...testimonial,
     verificationImage: `${BASE_URL}${testimonial.verificationImage}`,
-    starsReview: `${BASE_URL}${testimonial.starsReviewImage}`,
+    starsReviewImage: `${BASE_URL}${testimonial.starsReviewImage}`,
   }));
 
   return {
