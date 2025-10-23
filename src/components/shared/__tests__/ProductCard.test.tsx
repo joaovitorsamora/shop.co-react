@@ -8,7 +8,7 @@ describe('ProductCard', () => {
   it('Should render ProductCard component', () => {
     render(
       <MemoryRouter>
-        <ProductCard products={mockProducts} />
+        <ProductCard product={mockProducts} />
       </MemoryRouter>
     );
 
