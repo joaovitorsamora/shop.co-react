@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface DressStyleSectionProps {
   title: string;
   clothesStyles: Array<{
@@ -28,7 +30,7 @@ export const DressStyleSection: React.FC<DressStyleSectionProps> = ({ clothesSty
             key={style.area + index}
             className={`relative overflow-hidden ${gridAreaClasses[style.area]}`}
           >
-            <a href={style.href}>
+            <Link to={style.href}>
               <img
                 src={style.image.replace('-desktop.png', '.png')}
                 alt={style.alt}
@@ -44,7 +46,7 @@ export const DressStyleSection: React.FC<DressStyleSectionProps> = ({ clothesSty
                 alt={style.alt}
                 className="hidden md:block xl1024:block w-full h-full object-cover rounded-[20px]"
               />
-            </a>
+            </Link>
             <figcaption className="absolute top-2 left-0.5 text-black text-[1rem] font-bold  px-3 py-1 rounded">
               {style.categoria}
             </figcaption>
