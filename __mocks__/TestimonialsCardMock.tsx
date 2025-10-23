@@ -3,7 +3,7 @@ export const mockTestimonialsCard = {
   name: 'Fake name',
   verificationImage: 'fake-image.png',
   quote: 'Fake quote...',
-  starsReview: 'fake-image-verification.png',
+  starsReviewImage: 'fake-image-verification.png',
 };
 
 export const mockTestimonialsCardFromCarrousel = [
@@ -12,6 +12,6 @@ export const mockTestimonialsCardFromCarrousel = [
     name: 'Fake name',
     verificationImage: 'fake-image.png',
     quote: 'Fake quote...',
-    starsReview: 'fake-image-verification.png',
+    starsReviewImage: 'fake-image-verification.png',
   },
 ];
