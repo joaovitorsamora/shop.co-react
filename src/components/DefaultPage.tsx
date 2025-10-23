@@ -17,9 +17,8 @@ export const DefaultPage = ({
         renderIcon={() => <Menu />}
         menuLinks={[
           { text: 'Shop', href: '#' },
-          { text: 'On Sale', href: '#' },
-          { text: 'New Arrivals', href: '#' },
-          { text: 'Brands', href: '#' },
+          { text: 'On Sale', href: '#onsale' },
+          { text: 'New Arrivals', href: '#newarrivals' },
         ]}
         placeholder="Search for products"
         textPromo="Sign up and get 20% off to your first order."
