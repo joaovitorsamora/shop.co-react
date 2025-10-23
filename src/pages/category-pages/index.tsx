@@ -73,8 +73,8 @@ export const CategoryPage = () => {
               ))}
             </div>
           ) : (
-            <div className="w-64 mx-auto my-0 p-4 text-black font-bold font-poppins">
-              SEM PRODUTOS
+            <div className="text-center text-gray-500 font-poppins">
+              Nenhum produto encontrado para a categoria "{category}"
             </div>
           )}
 
