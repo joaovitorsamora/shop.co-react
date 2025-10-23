@@ -27,7 +27,7 @@ export const CarrouselProduct: React.FC<CarouselProductProps> = ({ products, lay
             <Card>
               <CardContent className="flex aspect-square items-center justify-center p-6">
                 <Suspense fallback={<SkeletonCard />}>
-                  <ProductCard products={product} />
+                  <ProductCard product={product} />
                 </Suspense>
               </CardContent>
             </Card>
@@ -48,7 +48,7 @@ export const CarrouselProduct: React.FC<CarouselProductProps> = ({ products, lay
                   <Card>
                     <CardContent className="flex aspect-square items-center justify-center p-6">
                       <Suspense fallback={<SkeletonCard />}>
-                        <ProductCard products={product} />
+                        <ProductCard product={product} />
                       </Suspense>
                     </CardContent>
                   </Card>
