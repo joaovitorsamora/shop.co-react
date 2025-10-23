@@ -21,7 +21,6 @@ export const ProductDetailsPage = () => {
 
   const url = process.env.REACT_APP_PRODUCTS;
 
-  //fazendo fetch da aplicação e armazenando os dados no products state e atualizando pelo setProducts
   const { products, testimonials } = useFetchProducts();
 
   const [quantity, setQuantity] = useState(1);
