@@ -1,15 +1,13 @@
 import { HeroSection } from './components/sections/HeroSection';
 import { ProductSection } from './containers/ProductSection';
-import { useFetchProducts } from './hooks/useFetchProducts';
 import { DressStyleSection } from './components/DressStyleSection';
-import { ProductType } from './types/ProductType';
 import { CarrouselTestimonial } from './components/CarrouselTestimonial';
+import { useFilteredProducts } from './hooks/useFilteredProducts';
+import { useFetchProducts } from './hooks/useFetchProducts';
 
 function App() {
+  const { filteredProducts } = useFilteredProducts();
   const { products, testimonials } = useFetchProducts();
-  const filteredProducts = products.filter(
-    (product: ProductType | ProductType) => product.review > 4.0
-  );
 
   return (
     <div>
@@ -31,12 +29,14 @@ function App() {
         ]}
       />
       <ProductSection
+        id="newarrivals"
         title="NEW ARRIVALS"
         btnTitle="View All"
         buttonOnClick={() => {}}
         products={products}
       />
       <ProductSection
+        id="onsale"
         title="TOP SELLING"
         btnTitle="View All"
         buttonOnClick={() => {}}
@@ -48,28 +48,28 @@ function App() {
           {
             image: './assets/casual.png',
             alt: 'Homem usando roupa casual',
-            href: '#',
+            href: '/category-pages/casual',
             categoria: 'casual',
             area: 'casual',
           },
           {
             image: './assets/formal.png',
             alt: 'Homem usando roupa formal',
-            href: '#',
+            href: '/category-pages/formal',
             categoria: 'formal',
             area: 'formal',
           },
           {
             image: './assets/party.png',
             alt: 'Mulher usando roupa para festa',
-            href: '#',
+            href: '/category-pages/party',
             categoria: 'party',
             area: 'party',
           },
           {
             image: './assets/gym.png',
             alt: 'Homem usando roupa para academia',
-            href: '#',
+            href: '/category-pages/gym',
             categoria: 'gym',
             area: 'gym',
           },
