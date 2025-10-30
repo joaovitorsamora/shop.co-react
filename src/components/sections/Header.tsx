@@ -2,8 +2,11 @@ import { HeaderTopPromo } from '../HeaderTopPromo';
 import { HeaderMenu } from '../HeaderMenu';
 import { HeaderSearch } from '../HeaderSearch';
 import { SidePanel } from '../SidePanel';
-import { Search, User } from 'lucide-react';
+import { Search, ShoppingBag, User, LogOut } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { clearProfile } from '../../features/profile/profileSlice';
 
 interface HeaderProps {
   logoText: string;
@@ -13,6 +16,7 @@ interface HeaderProps {
   textPromo: string;
   textSignUp: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleOpenFormModal: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -23,7 +27,19 @@ export const Header: React.FC<HeaderProps> = ({
   menuLinks,
   placeholder,
   onChange,
+  handleOpenFormModal,
 }) => {
+  const cartURL = process.env.REACT_APP_CART!;
+  const [token, setToken] = useState(localStorage.getItem('token'));
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    dispatch(clearProfile());
+    setToken(null);
+    window.location.reload();
+  };
+
   return (
     <header>
       <HeaderTopPromo textPromo={textPromo} textSignUp={textSignUp} />
@@ -36,8 +52,14 @@ export const Header: React.FC<HeaderProps> = ({
 
         <div className="flex items-center gap-4">
           <Search className="md:hidden" />
-          <User className="w-6 h-6 text-black cursor-pointer" />
-          <SidePanel />
+          {token ? (
+            <LogOut className="w-6 h-6 text-black cursor-pointer" onClick={handleLogout} />
+          ) : (
+            <User className="w-6 h-6 text-black cursor-pointer" onClick={handleOpenFormModal} />
+          )}
+          <Link to={`/cart`}>
+            <ShoppingBag />
+          </Link>
         </div>
       </section>
     </header>
