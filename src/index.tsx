@@ -1,12 +1,13 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { ProductDetailsPage } from './pages/product-details-page';
+import { ProductDetailsPage } from './pages/product-details';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { DefaultPage } from './components/DefaultPage';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
-import { CategoryPage } from './pages/category-pages';
+import { CategoryPage } from './pages/category';
+import { CartPage } from './pages/cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -20,8 +21,9 @@ root.render(
         <Route path="/" element={<DefaultPage />}>
           <Route index element={<App />} />
         </Route>
-        <Route path="/product-details-page/:id" element={<ProductDetailsPage />} />
-        <Route path="/category-pages/:category" element={<CategoryPage />} />
+        <Route path="product-details/:id" element={<ProductDetailsPage />} />
+        <Route path="category/:category" element={<CategoryPage />} />
+        <Route path="cart" element={<CartPage />} />
       </Routes>
     </BrowserRouter>
   </Provider>
