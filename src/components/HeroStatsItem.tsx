@@ -1,3 +1,6 @@
+import { TypographyH2 } from './Typography/TypographyH2';
+import { TypographyP } from './Typography/TypographyP';
+
 interface HeroStatsItemProps {
   statsItem?: Array<{
     text?: string;
@@ -23,8 +26,8 @@ export const HeroStatsItem: React.FC<HeroStatsItemProps> = ({ statsItem }) => {
             className={`p-4 text-start my-0 mx-auto flex flex-col justify-center items-start gap-2.5 ${stats.fullWidth ? 'col-span-2 mt-4 lg:mt-0' : ''}`}
             data-testid="lista-disable"
           >
-            <h2 className="text-2xl font-bold">{stats.text}</h2>
-            <p className="text-xs font-normal">{stats.description}</p>
+            <TypographyH2 className="text-2xl font-bold" text={stats.text} />
+            <TypographyP className="text-xs font-normal" text={stats.description} />
           </li>
         )
       )}
