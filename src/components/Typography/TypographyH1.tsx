@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type TypographyH1Props = React.HTMLAttributes<HTMLHeadingElement> & {
   text: string;
@@ -6,7 +6,10 @@ type TypographyH1Props = React.HTMLAttributes<HTMLHeadingElement> & {
 
 export const TypographyH1 = ({ text, ...props }: TypographyH1Props) => {
   return (
-    <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0" {...props}>
+    <h2
+      className="scroll-m-20 border-b pb-2 text-3xl font-semibold font-poppins tracking-tight first:mt-0"
+      {...props}
+    >
       {text}
     </h2>
   );
