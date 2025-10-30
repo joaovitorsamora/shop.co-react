@@ -42,34 +42,35 @@ function App() {
         buttonOnClick={() => {}}
         products={filteredProducts}
       />
+
       <DressStyleSection
         title="BROWSE BY dress STYLE"
         clothesStyles={[
           {
             image: './assets/casual.png',
             alt: 'Homem usando roupa casual',
-            href: '/category-pages/casual',
+            href: '/category/casual',
             categoria: 'casual',
             area: 'casual',
           },
           {
             image: './assets/formal.png',
             alt: 'Homem usando roupa formal',
-            href: '/category-pages/formal',
+            href: '/category/formal',
             categoria: 'formal',
             area: 'formal',
           },
           {
             image: './assets/party.png',
             alt: 'Mulher usando roupa para festa',
-            href: '/category-pages/party',
+            href: '/category/party',
             categoria: 'party',
             area: 'party',
           },
           {
             image: './assets/gym.png',
             alt: 'Homem usando roupa para academia',
-            href: '/category-pages/gym',
+            href: '/category/gym',
             categoria: 'gym',
             area: 'gym',
           },
