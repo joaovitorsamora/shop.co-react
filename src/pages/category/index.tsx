@@ -14,6 +14,7 @@ import {
   PaginationPrevious,
 } from '../../components/ui/pagination';
 import { FilterMenu } from '../../components/Filter';
+import { ListFilter } from 'lucide-react';
 import debounce from 'lodash.debounce';
 
 export const CategoryPage = () => {
@@ -23,6 +24,7 @@ export const CategoryPage = () => {
   const [itemsPerPage] = useState(9);
   const [isMobileScreen, setIsMobileScreen] = useState(false);
   const [isTabletScreen, setIsTabletScreen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const totalPage = Math.ceil(products.length / itemsPerPage);
   const handlePageChange = (page: number) => {
@@ -56,18 +58,27 @@ export const CategoryPage = () => {
 
   const currentItems = filterCategory.slice(indexOfFirstPage, indexOfLastPage);
 
+  const handleToggle = () => {
+    setIsOpen(prev => !prev);
+  };
+
   return (
-    <DefaultPage className="min-h-screen">
-      <div className="grid-layout gap-4 ">
-        <h2 className="area-header text-black text-2xl font-bold font-poppins">
-          {category?.toUpperCase()}
-        </h2>
-
-        <FilterMenu className="area-aside" />
-
-        <div className="area-main flex flex-col">
+    <DefaultPage className="relative min-h-screen">
+      <div className="flex md:justify-center mobile:justify-center mt-4 mb-12 mx-4 gap-4">
+        <FilterMenu isOpen={isOpen} setIsOpen={setIsOpen} />
+        <div className="flex flex-col">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-black text-2xl font-bold font-poppins">
+              {category?.toUpperCase()}
+            </h2>
+            <ListFilter
+              className="2xl:hidden md:block bg-black border text-white border-gray-300 p-2 rounded-full cursor-pointer"
+              onClick={handleToggle}
+              size={24}
+            />
+          </div>
           {currentItems.length !== 0 ? (
-            <div className="grid 2xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+            <div className="grid 2xl:grid-cols-3 md:grid-cols-2 mobile:grid-cols-1 gap-4">
               {currentItems.map(t => (
                 <ProductCard key={t.id} product={t} />
               ))}
@@ -77,7 +88,6 @@ export const CategoryPage = () => {
               Nenhum produto encontrado para a categoria "{category}"
             </div>
           )}
-
           <Pagination className="mt-auto">
             <PaginationContent>
               <PaginationItem>
